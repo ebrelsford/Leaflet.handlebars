@@ -21,7 +21,8 @@ Define the following options on your `FeatureGroup` (eg, an `L.GeoJSON`):
 
  - **getTemplateContext**: (function) A function that takes the layer that a 
    popup is being created for and returns an object that will serve as the 
-   context for the template.
+   context for the template. Optional. If not provided, the context will be
+   consist of the layer's feature, which will be called `feature`.
  - **handlebarsTemplateSelector**: (string) The selector for the Handlebars
    template. Required.
 
@@ -29,7 +30,7 @@ Define the following options on your `FeatureGroup` (eg, an `L.GeoJSON`):
 ### Examples
 
 Create a GeoJSON layer, each feature having a popup as defined in a Handlebars
-with `id` `popup-template`:
+template with `id` `popup-template`:
 
     var geojsonlayer = L.geoJson(data, {
         handlebarsTemplateSelector: '#popup-template'
