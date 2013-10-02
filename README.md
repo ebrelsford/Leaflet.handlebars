@@ -32,13 +32,16 @@ Define the following options on your `FeatureGroup` (eg, an `L.GeoJSON`):
 Create a GeoJSON layer, each feature having a popup as defined in a Handlebars
 template with `id` `popup-template`:
 
+```javascript
     var geojsonlayer = L.geoJson(data, {
         handlebarsTemplateSelector: '#popup-template'
     });
+```
 
 Slightly more complicated, create a GeoJSON layer and customize the context
 given to the template for each layer:
 
+```javascript
     var geojsonlayer = L.geoJson(data, {
         handlebarsTemplateSelector: '#popup-template',
         getTemplateContext: function (layer) {
@@ -48,6 +51,7 @@ given to the template for each layer:
             };
         }
     });
+```
 
 
 ## Demos
