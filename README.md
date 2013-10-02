@@ -33,24 +33,24 @@ Create a GeoJSON layer, each feature having a popup as defined in a Handlebars
 template with `id` `popup-template`:
 
 ```javascript
-    var geojsonlayer = L.geoJson(data, {
-        handlebarsTemplateSelector: '#popup-template'
-    });
+var geojsonlayer = L.geoJson(data, {
+    handlebarsTemplateSelector: '#popup-template'
+});
 ```
 
 Slightly more complicated, create a GeoJSON layer and customize the context
 given to the template for each layer:
 
 ```javascript
-    var geojsonlayer = L.geoJson(data, {
-        handlebarsTemplateSelector: '#popup-template',
-        getTemplateContext: function (layer) {
-            return {
-                detailUrl: '/things/' + layer.feature.id,
-                feature: layer.feature
-            };
-        }
-    });
+var geojsonlayer = L.geoJson(data, {
+    handlebarsTemplateSelector: '#popup-template',
+    getTemplateContext: function (layer) {
+        return {
+            detailUrl: '/things/' + layer.feature.id,
+            feature: layer.feature
+        };
+    }
+});
 ```
 
 
