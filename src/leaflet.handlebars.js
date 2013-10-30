@@ -11,7 +11,7 @@
         L.FeatureGroup.include({
 
             precompileTemplate: function () {
-                if (!this.handlebarsTemplate && this.options.handlebarsTemplateSelector) {
+                if (!this.handlebarsTemplate && this.options && this.options.handlebarsTemplateSelector) {
                     // Pre-compile template
                     var source = $(this.options.handlebarsTemplateSelector).html();
                     this.handlebarsTemplate = Handlebars.compile(source);
