@@ -49,7 +49,7 @@
                 }
 
                 if (this._popupContent && layer.bindPopup) {
-                    layer.bindPopup(this._popupContent, this._popupOptions);
+                    layer.bindPopup(this._popupContent, this.options.popupOptions);
                 }
 
                 return this.fire('layeradd', {layer: layer});
