@@ -45,7 +45,12 @@
                 // If we have a handlebars template use it
                 var template = this.precompileTemplate();
                 if (template) {
-                    this._popupContent = this.handlebarsTemplate(this.getTemplateContext(layer));
+                    try {
+                        this._popupContent = this.handlebarsTemplate(this.getTemplateContext(layer));
+                    }
+                    catch (e) {
+                        //
+                    }
                 }
 
                 if (this._popupContent && layer.bindPopup) {
